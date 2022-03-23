@@ -16,8 +16,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     '/': {
       lang: 'zh-CN',
       title: "Evan's blog",
-      description: 'web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。',
-    }
+      description:
+        'web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。',
+    },
   },
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
 
@@ -33,9 +34,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
           {
             text: '前端文章',
-            items: [
-              { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
-            ],
+            items: [{ text: 'JavaScript', link: '/pages/8143cc480faf9a11/' }],
           },
           {
             text: '学习笔记',
@@ -113,6 +112,26 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: '归档', link: '/archives/' },
         ],
       },
+      {
+        text: 'Front End',
+        link: '/pages/fa842a/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        items: [
+          { text: 'H5&CSS3', link: '/pages/fa842a/' },
+          { text: 'JS', link: '/pages/84d48a/' },
+          { text: 'Node', link: '/pages/b62d08/' },
+          { text: 'Webpack', link: '/pages/6f1f8f/' },
+          { text: 'Vue2', link: '/pages/b41819/' },
+          { text: 'Vue3', link: '/pages/347f26/' },
+          { text: '微信小程序', link: '/pages/00b1d8/' },
+          { text: 'Andorid', link: '' },
+          { text: 'Flutter', link: '' },
+        ],
+      },
+      {
+        text: '推荐',
+        link: '/pages/d80ad7/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        items: [],
+      },
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
@@ -162,7 +181,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
+      avatar:
+        'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
       name: 'Evan Xu',
       slogan: '前端界的小学生',
     },
@@ -197,7 +217,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     },
 
     // 自定义hmtl(广告)模块
-    htmlModules
+    htmlModules,
   },
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
@@ -207,7 +227,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       'meta',
       {
         name: 'keywords',
-        content: '前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown',
+        content:
+          '前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown',
       },
     ],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
@@ -222,10 +243,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
   ],
 
-
   // 插件配置
   plugins: <UserPlugins>[
-
     'vuepress-plugin-baidu-autopush', // 百度自动推送
 
     [
@@ -268,7 +287,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     [
       'one-click-copy', // 代码块复制按钮
       {
-        copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
+        copySelector: [
+          'div[class*="language-"] pre',
+          'div[class*="aside-code"] aside',
+        ], // String or Array
         copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
         duration: 1000, // prompt message display time.
         showInMobile: false, // whether to display on the mobile side, default: false.
@@ -312,8 +334,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
           title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
           labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-          body:
-            '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
+          body: '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
         },
       },
     ],
@@ -333,8 +354,5 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   },
 
   // 监听文件变化并重新构建
-  extraWatchFiles: [
-    '.vuepress/config.ts',
-    '.vuepress/config/htmlModules.ts',
-  ]
+  extraWatchFiles: ['.vuepress/config.ts', '.vuepress/config/htmlModules.ts'],
 })
