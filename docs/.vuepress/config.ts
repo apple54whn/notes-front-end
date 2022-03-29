@@ -118,6 +118,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         items: [
           { text: 'H5&CSS3', link: '/pages/fa842a/' },
           { text: 'JS', link: '/pages/84d48a/' },
+          { text: 'TS', link: '/pages/364e02/' },
           { text: 'Node', link: '/pages/b62d08/' },
           { text: 'Webpack', link: '/pages/6f1f8f/' },
           { text: 'Vue2', link: '/pages/b41819/' },
